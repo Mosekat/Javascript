@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 1.
+    //пример 1
+    // let a = 1;
+    // let b = 1;
+    // let c;
+    // let d;
+    //
+    // c = ++a; //Префиксный инкремент ставится перед переменной, сразу увеличивает //переменную на 1.
+    // alert(c); // ответ: 2
+    //
+    // //пример 2
+    // d = b++; // Постфиксный инкремент, ставится после переменной,также увеличивает переменную на 1, НО сначала вернет старое значение переменной.
+    // alert(d); //ответ: 1
+    //
+    // //пример 3
+    // c = 2 + ++a;// Переменая а стала равна 2( первый пример), теперь мы ее увеличили на 1 префиксным инкрементом, а стала равна 3, 2 + 3 = 5.
+    // alert(c); //ответ: 5
+    //
+    // //пример 4
+    // d = 2 + b++;
+    // alert(d); // Во 2 примере, мы увеличили постфиксным инкрементом b на 1, b стала равна 2, 2 + 2 = 4. ответ: 4
+    // alert(a); //3 Переменная а изначально была равна 1, потом 2 раза была увеличена префиксным инкрементом.
+    // alert(b); //3 Переменная b изначально была равна 1, потом 2 раза была увеличена постфиксным инкрементом.
+
+    //2.
+    // let a = 2;
+    // let x = 1 + (a *= 2);// a *=2, то же самое, что a = a * 2; в результате a будет равна 4, 1 + 4 = 5 - значение переменной x.
+
+    // 3.
+    // let a = -17;
+    // let b = 5;
+    //
+    // if (a >= 0 && b >= 0) {
+    //     alert(a - b);
+    // } else if (a < 0 && b < 0) {
+    //     alert(a * b);
+    // } else {
+    //     alert(a + b);
+    // }
+
+    // 4.
+    //
+    // function sum(num1, num2) {
+    //     return num1 + num2;
+    // }
+    //
+    // // alert(sum(5, 2));
+    //
+    // function substract(num1, num2) {
+    //     return num1 - num2;
+    // }
+    //
+    // // alert(substract(50, 10));
+    //
+    // function mul(num1, num2) {
+    //     return num1 * num2;
+    // }
+    //
+    // // alert(mul(2, 2));
+    //
+    // function division(num1, num2) {
+    //     return num1 / num2;
+    // }
+    //
+    // // alert(division(8, 4));
+    //
+    //
+    // // 5.
+    // function mathOperation(arg1, arg2, operation) {
+    //     switch (operation) {
+    //         case "sum":
+    //             alert(sum(arg1, arg2));
+    //             break;
+    //         case "substract":
+    //             alert(substract(arg1, arg2));
+    //             break;
+    //         case "mul":
+    //             alert(mul(arg1, arg2));
+    //             break;
+    //         case  "division":
+    //             alert(division(arg1, arg2));
+    //             break;
+    //     }
+    // }
+    //
+    // mathOperation(10, 10, 'mul');
+
+    //6.
+
+    let numberStr = prompt("Введите количество денег, которое вы хотите положить на счет: ");
+    let lastNumber = numberStr.charAt(numberStr.length - 1);
+    switch (lastNumber) {
+        case '1':
+            alert("Ваша сумма в " + numberStr + " рубль успешно зачислена.");
+            break;
+        case '2':
+        case '3':
+        case '4':
+            alert("Ваша сумма в " + numberStr + " рубля успешно зачислена.");
+            break;
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+        case '0':
+            alert("Ваша сумма в " + numberStr + " рублей успешно зачислена.");
+
+    }
+
+</script>
+</body>
+</html>
