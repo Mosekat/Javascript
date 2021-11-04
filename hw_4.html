@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    //1.
+    // function numberInObject(number) {
+    //     if (isNaN(number) || number < 0 || number > 999 || !Number.isInteger(number)) {
+    //         console.log('Передайте в функцию число в диапазоне от 0 до 999');
+    //     }
+    //     let obj = {};
+    //     let numToStr = String(number);
+    //     let numLength = String(number).length;
+    //
+    //     if (numLength === 1) {
+    //         obj = {
+    //             units: numToStr[0],
+    //             tens: 0,
+    //             hundreds: 0,
+    //         }
+    //
+    //     } else if (numLength === 2) {
+    //         obj = {
+    //             units: numToStr[1],
+    //             tens: numToStr[0],
+    //             hundreds: 0,
+    //         }
+    //     } else {
+    //         obj = {
+    //             units: numToStr[2],
+    //             tens: numToStr[1],
+    //             hundreds: numToStr[0],
+    //         }
+    //
+    //     }
+    //     return obj;
+    // }
+    //
+    // //Тесты
+    // console.log(numberInObject(1.152));
+    // console.log(numberInObject(50));
+    // console.log(numberInObject(1));
+    // console.log(numberInObject(876))
+    // console.log(numberInObject(999));
+    // console.log(numberInObject(67));
+
+    //1.1
+    // Es5.
+    // function Product(name, price) {
+    //     this.name = name;
+    //     this.price = price;
+    // }
+    //
+    // Product.prototype.make25PercentDiscount = function() {
+    //     this.price = this.price * 0.75;
+    // }
+    // let product1 = new Product('часы', '3000');
+    // let product2 = new Product('картина', '5000');
+    // product1.make25PercentDiscount();
+    // product2.make25PercentDiscount();
+    // console.log(product1);
+    // console.log(product2);
+
+    // Es6.
+    // class Product {
+    //     constructor(name, price) {
+    //         this.name = name;
+    //         this.price = price;
+    //     }
+    //
+    //     make25PercentDiscount() {
+    //         this.price = this.price * 0.75;
+    //     }
+    // }
+    //
+    // let product1 = new Product('часы', '3000');
+    // let product2 = new Product('картина', '5000');
+    // product1.make25PercentDiscount();
+    // product2.make25PercentDiscount();
+    // console.log(product1);
+    // console.log(product2);
+
+    //1.2
+    //Es5.
+    // function Post(author, text, date) {
+    //     this.author = author;
+    //     this.text = text;
+    //     this.date = date;
+    // }
+    //
+    // Post.prototype.edit = function(text) {
+    //     this.text = text;
+    // }
+    //
+    // function AttachedPost(author, text, date) {
+    //     Post.call(this, author, text, date);
+    //     this.highlighted = false;
+    // }
+    //
+    // AttachedPost.prototype = Object.create(Post.prototype);
+    // AttachedPost.constructor = AttachedPost;
+    //
+    // AttachedPost.prototype.makeTextHighlighted = function() {
+    //     this.highlighted = true;
+    // }
+    //
+    // let attach = new AttachedPost('АвторEs5', 'ТекстEs5', 'ДатаEs5');
+    //
+    // attach.edit("Просто текст");
+    // console.log(attach.text);
+    // attach.makeTextHighlighted();
+    // console.log(attach.highlighted);
+
+    //Es6.
+    class Post {
+        constructor(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        edit(text) {
+            this.text = text;
+        }
+    }
+
+    class AttachedPost extends Post {
+        constructor(author, text, date) {
+            super(author, text, date);
+            this.highlighted = false;
+        }
+
+        makeTextHighlighted() {
+            this.highlighted = true;
+        }
+    }
+
+    let attach = new AttachedPost('АвторEs6', 'ТекстEs6', 'ДатаEs6');
+    attach.edit("Просто текстEs6");
+    console.log(attach.text);
+    attach.makeTextHighlighted();
+    console.log(attach.highlighted);
+
+
+</script>
+</body>
+</html>
