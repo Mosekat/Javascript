@@ -3,28 +3,17 @@ let askQuestion = {
     currentQuestion: 0,
 
     getCurrentQuestion(arr) {
-
-        for (let i = this.currentQuestion; i < arr.length; i++) {
-
-            let question = arr[i].question;
-
-            return question;
-        }
+        return arr[this.currentQuestion].question;
 
     },
+
     getCurrentAnswer(arr) {
-        for (let i = this.currentQuestion; i < arr.length; i++) {
-
-            let answers = arr[i].answer;
-
-            return answers;
-        }
-
+            return arr[this.currentQuestion].answer;
     },
 
-    getUserAnswer(question,answers) {
-        let userAnswer = prompt(`${question}\n${answers}`);
-            return userAnswer;
+    getUserAnswer(question, answers) {
+
+        return prompt(`${question}\n${answers}`);
     }
 
 }

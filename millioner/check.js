@@ -9,7 +9,7 @@ let check = {
             console.log('Поздравляю, это правильный ответ!');
         }
         askQuestion.currentQuestion++;
-        return;
+
     }
 
 }

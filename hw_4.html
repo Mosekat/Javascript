@@ -89,64 +89,64 @@
 
     //1.2
     //Es5.
-    // function Post(author, text, date) {
-    //     this.author = author;
-    //     this.text = text;
-    //     this.date = date;
+    function Post(author, text, date) {
+        this.author = author;
+        this.text = text;
+        this.date = date;
+    }
+
+    Post.prototype.edit = function(text) {
+        this.text = text;
+    }
+
+    function AttachedPost(author, text, date) {
+        Post.call(this, author, text, date);
+        this.highlighted = false;
+    }
+
+    AttachedPost.prototype = Object.create(Post.prototype);
+    AttachedPost.prototype.constructor = AttachedPost;
+
+    AttachedPost.prototype.makeTextHighlighted = function() {
+        this.highlighted = true;
+    }
+
+    let attach = new AttachedPost('АвторEs5', 'ТекстEs5', 'ДатаEs5');
+
+    attach.edit("Просто текст");
+
+    attach.makeTextHighlighted();
+    console.log(attach.highlighted);
+
+    //Es6.
+    // class Post {
+    //     constructor(author, text, date) {
+    //         this.author = author;
+    //         this.text = text;
+    //         this.date = date;
+    //     }
+    //
+    //     edit(text) {
+    //         this.text = text;
+    //     }
     // }
     //
-    // Post.prototype.edit = function(text) {
-    //     this.text = text;
+    // class AttachedPost extends Post {
+    //     constructor(author, text, date) {
+    //         super(author, text, date);
+    //         this.highlighted = false;
+    //     }
+    //
+    //     makeTextHighlighted() {
+    //         this.highlighted = true;
+    //     }
     // }
     //
-    // function AttachedPost(author, text, date) {
-    //     Post.call(this, author, text, date);
-    //     this.highlighted = false;
-    // }
-    //
-    // AttachedPost.prototype = Object.create(Post.prototype);
-    // AttachedPost.constructor = AttachedPost;
-    //
-    // AttachedPost.prototype.makeTextHighlighted = function() {
-    //     this.highlighted = true;
-    // }
-    //
-    // let attach = new AttachedPost('АвторEs5', 'ТекстEs5', 'ДатаEs5');
-    //
-    // attach.edit("Просто текст");
+    // let attach = new AttachedPost('АвторEs6', 'ТекстEs6', 'ДатаEs6');
+    // attach.edit("Просто текстEs6");
     // console.log(attach.text);
     // attach.makeTextHighlighted();
     // console.log(attach.highlighted);
-
-    //Es6.
-    class Post {
-        constructor(author, text, date) {
-            this.author = author;
-            this.text = text;
-            this.date = date;
-        }
-
-        edit(text) {
-            this.text = text;
-        }
-    }
-
-    class AttachedPost extends Post {
-        constructor(author, text, date) {
-            super(author, text, date);
-            this.highlighted = false;
-        }
-
-        makeTextHighlighted() {
-            this.highlighted = true;
-        }
-    }
-
-    let attach = new AttachedPost('АвторEs6', 'ТекстEs6', 'ДатаEs6');
-    attach.edit("Просто текстEs6");
-    console.log(attach.text);
-    attach.makeTextHighlighted();
-    console.log(attach.highlighted);
 
 
 </script>
