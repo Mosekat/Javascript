@@ -11,38 +11,39 @@
     'use strict';
 
     //1.
-    // function numberInObject(number) {
-    //     if (isNaN(number) || number < 0 || number > 999 || !Number.isInteger(number)) {
-    //         console.log('Передайте в функцию число в диапазоне от 0 до 999');
-    //     }
-    //     let obj = {};
-    //     let numToStr = String(number);
-    //     let numLength = String(number).length;
-    //
-    //     if (numLength === 1) {
-    //         obj = {
-    //             units: numToStr[0],
-    //             tens: 0,
-    //             hundreds: 0,
-    //         }
-    //
-    //     } else if (numLength === 2) {
-    //         obj = {
-    //             units: numToStr[1],
-    //             tens: numToStr[0],
-    //             hundreds: 0,
-    //         }
-    //     } else {
-    //         obj = {
-    //             units: numToStr[2],
-    //             tens: numToStr[1],
-    //             hundreds: numToStr[0],
-    //         }
-    //
-    //     }
-    //     return obj;
-    // }
-    //
+    function numberInObject(number) {
+        if (isNaN(number) || number < 0 || number > 999 || !Number.isInteger(number)) {
+            console.log('Передайте в функцию число в диапазоне от 0 до 999');
+            return ;
+        }
+        let obj = {};
+        let numToStr = String(number);
+        let numLength = String(number).length;
+
+        if (numLength === 1) {
+            obj = {
+                units: numToStr[0],
+                tens: 0,
+                hundreds: 0,
+            }
+
+        } else if (numLength === 2) {
+            obj = {
+                units: numToStr[1],
+                tens: numToStr[0],
+                hundreds: 0,
+            }
+        } else {
+            obj = {
+                units: numToStr[2],
+                tens: numToStr[1],
+                hundreds: numToStr[0],
+            }
+
+        }
+        return obj;
+    }
+
     // //Тесты
     // console.log(numberInObject(1.152));
     // console.log(numberInObject(50));
