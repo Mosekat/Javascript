@@ -40,16 +40,16 @@
     let inputFirst = document.getElementById('first');
     let inputSecond = document.getElementById('second');
     formEl.addEventListener('submit', function(event) {
-        let validate = true;
+        let valid = true;
         if (inputFirst.value === '') {
             inputFirst.style.borderColor = 'red';
-            validate = false;
+            valid = false;
         }
         if (inputSecond.value === '') {
             inputSecond.style.borderColor = "red";
-            validate = false;
+            valid = false;
         }
-        if (validate === false) {
+        if (!valid) {
             event.preventDefault();
         }
 

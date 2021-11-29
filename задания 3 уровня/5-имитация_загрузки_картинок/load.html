@@ -42,9 +42,12 @@
 
 <script>
     let imgCollection = document.querySelectorAll('img');
-    for (let i = 0; i < imgCollection.length; i++) {
-        imgCollection[i].setAttribute('src', `images/${i+1}.jpg`);
-    }
+    setTimeout(function() {
+        for (let i = 0; i < imgCollection.length; i++) {
+            imgCollection[i].setAttribute('src', `images/${i + 1}.jpg`);
+        }
+    }, 3000);
+
 </script>
 </body>
 </html>
